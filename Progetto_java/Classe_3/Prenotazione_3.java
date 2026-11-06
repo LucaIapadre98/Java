@@ -14,7 +14,7 @@ public class Prenotazione_3 {
         this.spettacoloN = spettacoloN;
     }
 
-
+    
     public void prenota(Cliente_3 clienteN){
         if (postiLiberi() >= 1){
             listaPrenotazioni.add(clienteN);
@@ -33,7 +33,6 @@ public class Prenotazione_3 {
             System.out.println("Posto assegnato al cliente in lista d'attesa: " + clienteInAttesa.getNome());
         }
     }
-
 
     
     public int postiLiberi(){
