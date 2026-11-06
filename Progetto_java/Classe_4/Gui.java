@@ -4,10 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-
 public class Gui {
 
     public Gui(){
@@ -25,12 +21,10 @@ public class Gui {
         pannello1.setLayout(null);
         contenitore1.add(pannello1);
 
-        //SFONDO
-        pannello1.setBackground(Color.LIGHT_GRAY);
-
+    
 
         //CREA IL MENU
-        createMenuBar(frame1);
+        createMenuBar(frame1, pannello1);
 
 
         //TESTO
@@ -71,7 +65,7 @@ public class Gui {
 
     }
 
-    private void createMenuBar(JFrame frame1){
+    private void createMenuBar(JFrame frame1, JPanel pannello1){
 
         //SERVE PER CREARE LA BARRA DEL MENU
         var menuBar = new JMenuBar();
@@ -84,16 +78,32 @@ public class Gui {
 
         //SERVE PER CREARE IL MENU "Spettacolo"
         var MenuItem1 = new JMenuItem("Spettacolo");
-        fileMenu.add(MenuItem1);
+        MenuItem1.setMnemonic(KeyEvent.VK_F);
 
+        MenuItem1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                System.out.println("Hai premuto il bottone spettacolo");
+                pannello1.setVisible(true);
+            }
+        });
+
+        fileMenu.add(MenuItem1);
         
         //SERVE PER CREARE IL MENU "Cliente"
         var MenuItem2 = new JMenuItem("Cliente");
+        MenuItem2.setMnemonic(KeyEvent.VK_C);
+        MenuItem2.setBackground(Color.red);
+        MenuItem2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                System.out.println("Hai premuto il bottone cliente");
+            }
+        });
         fileMenu.add(MenuItem2);
 
 
         //SERVE PER CREARE IL MENU "Prenotazioni"
         var MenuItem3 = new JMenuItem("Prenotazioni");
+        MenuItem3.setMnemonic(KeyEvent.VK_P);
         fileMenu.add(MenuItem3);
 
 
