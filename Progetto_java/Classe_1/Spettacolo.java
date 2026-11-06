@@ -10,7 +10,7 @@ public class Spettacolo {
         return nome_spettacolo;
     }
 
-    public void setNome_spettacolo(String nome spettacolo) {
+    public void setNome_spettacolo(String nome_spettacolo) {
         this.nome_spettacolo = nome_spettacolo;
     }
 
@@ -18,7 +18,11 @@ public class Spettacolo {
         return posti_max;
     }
 
+    public void setPosti_max(int posti_max) {
+        this.posti_max = posti_max;
+    }
     public String getDescrizione_spettacolo() {
+        
         return descrizione_spettacolo;
     }
 
