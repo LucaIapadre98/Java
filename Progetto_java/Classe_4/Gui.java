@@ -21,8 +21,6 @@ public class Gui {
         pannello1.setLayout(null);
         contenitore1.add(pannello1);
 
-    
-
         //CREA IL MENU
         createMenuBar(frame1, pannello1);
 
@@ -65,7 +63,7 @@ public class Gui {
 
     }
 
-    private void createMenuBar(JFrame frame1, JPanel pannello1){
+    private void createMenuBar(JFrame frame1, JPanel pannello1) {
 
         //SERVE PER CREARE LA BARRA DEL MENU
         var menuBar = new JMenuBar();
@@ -83,7 +81,7 @@ public class Gui {
         MenuItem1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 System.out.println("Hai premuto il bottone spettacolo");
-                pannello1.setVisible(true);
+                pannello1.setBackground(Color.BLUE);
             }
         });
 
@@ -92,10 +90,10 @@ public class Gui {
         //SERVE PER CREARE IL MENU "Cliente"
         var MenuItem2 = new JMenuItem("Cliente");
         MenuItem2.setMnemonic(KeyEvent.VK_C);
-        MenuItem2.setBackground(Color.red);
         MenuItem2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 System.out.println("Hai premuto il bottone cliente");
+                pannello1.setBackground(Color.RED);
             }
         });
         fileMenu.add(MenuItem2);
